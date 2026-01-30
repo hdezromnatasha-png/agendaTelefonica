@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda Telefónica</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <section id="componente">
+        <h1>Agenda Telefónica</h1>
+        <hr>
+        <article>
+            <h4>Nuevo Contacto</h4>
+            <label>Nombre:</label>
+            <input type="text" v-model="nombre">
+            <label>Teléfono:</label>
+            <input type="text" v-model="telefono">
+            <label>Categoría:</label>
+            <select v-model="categoria">
+                <option value="">Selecciona</option>
+                <option value="Familiar">Familiar</option>
+                <option value="Amistad">Amistad</option>
+                <option value="Laboral">Laboral</option>
+                <option value="Salud">Salud</option>
+            </select>
+            <button @click="agregarContacto">Agregar</button>
+        </article>
+        <!-- la tabla aparece solo si hay contactos -->
+        <table v-if="contactos.length > 0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Categoría</th>
+                    <th>Mensajes</th>
+                    <th>Llamadas</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- por cada contacto q se crea se agrega una fila -->
+                <tr v-for="(c, index) in contactos" :key="index">
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ c.nombre }}</td>
+                    <td>{{ c.telefono }}</td>
+                    <td>{{ c.categoria }}</td>
+                    <td>
+                        <button @click="c.mensajes--" :disabled="c.mensajes == 0">-</button>
+                        {{ c.mensajes }}
+                        <button @click="c.mensajes++" :disabled="c.mensajes == 10">+</button>
+                    </td>
+                    <td>
+                        <button @click="c.llamadas--" :disabled="c.llamadas == 0">-</button>
+                        {{ c.llamadas }}
+                        <button @click="c.llamadas++" :disabled="c.llamadas == 10">+</button>
+                    </td>
+                    <td>
+                        <button @click="eliminar(index)">X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Total de contactos: {{ contactos.length }}</p>
+    </section>
+
+    <script src="../js/vue.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

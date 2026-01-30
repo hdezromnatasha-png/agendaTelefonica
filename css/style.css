@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #616f9f, #8e9cd3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#componente {
+    background: white;
+    width: 600px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+#componente h1 {
+    text-align: center;
+    color: #616f9f;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+article {
+    background: #f3f4fb;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #616f9f;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #616f9f;
+}
+
+article button {
+    margin-top: 15px;
+    width: 100%;
+    background: #616f9f;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+article button:hover {
+    background: #4f5c8a;
+    transform: scale(1.03);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: #616f9f;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+td button {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+td button:hover {
+    background: #c0392b;
+}
+
+p {
+    margin-top: 15px;
+    text-align: right;
+    color: #616f9f;
+    font-weight: bold;
+}
